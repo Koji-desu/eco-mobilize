@@ -4,7 +4,7 @@ import { TextInput } from 'react-native-web';
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native';
 
-export default function Home(){
+export default function ConfirmAluguel(){
     const navigation = useNavigation();
     return(
         <View style={styles.container}>
@@ -15,85 +15,33 @@ export default function Home(){
                     animation="flipInY"
                     source={require('../../../assets/carrologo.png')}
                     style={{width: 75, height: 75}}
-                    resizeMede="contain"
+                    resizeMode="contain"
                     
                 />
                 <Text style={styles.title}>EcoMobilize</Text>
             </View>
-            <Text style={styles.title} >Veículos disponíveis para aluguel: </Text>
-            <Animatable.View animation="fadeInUp" delay={500} style={styles.containerOptions} >
-            
-                <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerCars}>
-            <TouchableOpacity onPress={()=>{navigation.navigate('carBYDTan')}}>
-            <Image 
-                    source={require('../../../assets/BYDTan.png')}
-                    style={styles.imageCar}
-                    resizeMode="contain"     
-                    
-            />
-            <Text style={styles.text}>BYD Tan</Text>
-            
-            </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>{navigation.navigate('carNissanLeaf')}}>
-            <Image
-                    source={require('../../../assets/NissanLeaf.png')}
-                    style={styles.imageCar} 
-                    resizeMode="contain"               
-            />
-            
-            <Text style={styles.text}>Nissan Leaf</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={()=>{navigation.navigate('carExpert')}}>
-            <Image
-            source={require('../../../assets/e-Expert.png')}
-            style={styles.imageCar} 
-            resizeMode="contain"
-            />
-            
-            <Text style={styles.text}>e-Expert</Text>
-            </TouchableOpacity>
-                </Animatable.View>
-
-                <Animatable.View animation="fadeInRight" delay={500} style={styles.containerCars}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('carMiniCooper')}}>
-                    <Image 
-                    source={require('../../../assets/Cooper.png')}
-                    style={styles.imageCar}
-                    resizeMode="contain"    
+            <View style={styles.containerMain}>
+                <View style={styles.containerSucess}>
+                    <Animatable.Image
+                    animation="flipInX"
+                        source={require('../../../assets/imgsucess.png')}
+                        style={{width: 300, height: 300}}
+                        resizeMode='contain'
                     />
-                    
-                    <Text style={styles.text}>Mini Cooper</Text>
-                </TouchableOpacity>
+                    <Text style={styles.textSucess}>Tudo Pronto !!!</Text>
+                    <Text style={styles.textSucess}>Seu aluguel foi finalizado!!</Text>
+                </View>
 
-                <TouchableOpacity onPress={()=>{navigation.navigate('carKangoo')}}>
-                    <Image
-                    source={require('../../../assets/Kangoo.png')}
-                    style={styles.imageCar}
-                    resizeMode="contain"    
-                    />
-                    
-                    <Text style={styles.text}>Kangoo</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>{navigation.navigate('carJumpy')}}>
-                    <Image
-                    source={require('../../../assets/e-Jumpy.png')}
-                    style={styles.imageCar}
-                    resizeMode="contain"    
-                    />
-                    
-                    <Text style={styles.text}>e-Jumpy</Text>
-                </TouchableOpacity>
-                </Animatable.View>
-            
-            </Animatable.View>
-
-            <Text style={styles.title} >Clique para saber mais sobre! </Text>
+                <View style={styles.containerCode}>
+                    <Text style={styles.textCode}>Esse é seu código para retirada do veículo</Text>
+                    <Text style={{fontSize: 22, marginBottom: 10, marginTop: 10, color: '#FFF'}}>#2981791230</Text>
+                    <Text style={styles.textCode}>Também pode ser visto na parte do perfil</Text>
+                </View>
+            </View>
 
             <Animatable.View animation="fadeInUp" delay={100} style={styles.containerNavigatorMenu}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Welcome')}}>
+                <TouchableOpacity>
                     <Image
                         source={require('../../../assets/voltar.png')}
                         style={styles.buttonsMenu}
@@ -132,11 +80,10 @@ export default function Home(){
                     <Text style={styles.buttonTextMenu}>Perfil</Text>
                 </TouchableOpacity>
             </Animatable.View>
-
         </View>
+        
     )
 }
-
 
 const styles = StyleSheet.create({
     container:{
@@ -150,23 +97,31 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row'
     },
-    containerOptions:{
+        containerMain:{
         flex:10,
         backgroundColor: '#4B7766',
         paddingStart: '5%',
         paddingEnd: '5%',
         textAlign: 'center',
         alignItems: 'center',
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignSelf: 'center',
+        width: '100%',
+        justifyContent: 'space-between'
         
 
     },
     containerCars:{
         padding: 25
     },
+    containerSucess:{
+        flex: 4,
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center'
+    },
     containerNavigatorMenu:{
-        height: 100,
+        flex:2,
         backgroundColor: '#95D6A4',
         justifyContent: 'space-around',
         alignSelf: 'center',
@@ -175,6 +130,12 @@ const styles = StyleSheet.create({
         width: '100%',
         
 
+    },
+    containerCode:{
+        flex: 4,
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center'
     },
     title:{
         fontSize: 24,
@@ -187,9 +148,19 @@ const styles = StyleSheet.create({
     text:{
         color: '#FFF',
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: '#95D6A4'
     },
-
+    textSucess:{
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#95D6A4'
+    },
+    textCode:{
+        color: '#FFF',
+        fontSize: 18
+    },
     imageCar:{
         marginBottom: 10,
         marginTop: 10,

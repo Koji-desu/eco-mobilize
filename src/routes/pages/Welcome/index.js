@@ -13,15 +13,15 @@ export default function Welcome(){
             <View style={styles.containerLogo}>
                 <Animatable.Image 
                     animation="flipInY"
-                    source={require('../../../assets/carropng 2.png')}
-                    style={{width: '250px', height: '250px'}}
+                    source={require('../Welcome/carropng.png')}
+                    style={{width: 250, height: 250}}
                     resizeMode="contain"
                 />
             </View>
 
             <Animatable.View delay={600} animation="fadeInUp"  style={styles.containerForm}>
                 <Text style={styles.title}>Alugue hoje mesmo seu carro na EcoMobilize</Text>
-                <Text style={styles.text}>Faça o login para começar</Text>
+                <Text style={styles.text}>Acesse para começar</Text>
 
                 <TouchableOpacity 
                 style={styles.button}

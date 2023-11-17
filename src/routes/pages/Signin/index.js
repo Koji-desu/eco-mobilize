@@ -62,7 +62,7 @@ export default function App() {
       <Text style={styles.titulo}>EcoMobilize</Text>
       <Image 
        style={styles.logo}
-       source={require("../../../assets/carropng 2.png")}/>
+       source={require('../../../assets/carrologo.png')}/>
         </Animatable.View>
       <Animatable.View animation="fadeInRight" delay={100}>
         <Text style={styles.textoPadrao}>Email:</Text>
