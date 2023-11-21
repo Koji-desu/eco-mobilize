@@ -4,7 +4,7 @@ import { TextInput } from 'react-native-web';
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native';
 
-export default function carBYDTan(){
+export default function CarBYDTan(){
     const navigation = useNavigation();
     return(
         <View style={styles.container}>
@@ -14,20 +14,23 @@ export default function carBYDTan(){
                 <Animatable.Image 
                     animation="flipInY"
                     source={require('../../../../assets/carrologo.png')}
-                    style={{width: '80px', height: '80px'}}
+                    style={{width: 80, height: 80}}
                     resizeMode="contain"
                 />
                 <Text style={styles.title}>EcoMobilize</Text>
             </View>
         
         <Animatable.View animation="fadeInUp" delay={500} style={styles.containerOptions} >
-            <TouchableOpacity>
+
             <Image  style={styles.imageCarro}
                     source={require('../../../../assets/BYDTan.png')}
-                    resizeMode="contain"                         
+                    resizeMode="contain"            
+                    
+                
             />
+
             <Text style={styles.text}>BYD Tan</Text>
-            </TouchableOpacity>             
+                     
             <View style={styles.containerSobre1}>
                 <View style={styles.containerSobre3}>
 
@@ -133,14 +136,14 @@ const styles = StyleSheet.create({
     },
     containerLogo:{
         flex: 2,
-        backgroundColor: '#7DC6AA',
+        backgroundColor: '#4B7766',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row'
     },
     containerOptions:{
         flex:10,
-        backgroundColor: '#7DC6AA',
+        backgroundColor: '#4B7766',
         paddingStart: '5%',
         paddingEnd: '5%',
         textAlign: 'center',
@@ -154,16 +157,17 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 150,
         marginTop: 10,
-        borderColor:'#4B7766',
+        borderColor:'#95D6A4',
     },
     containerSobre2:{       
-        borderColor:'#4B7766',
+        borderColor:'#95D6A4',
         borderWidth:1,
         width: '100%',
         height: 200,
         marginTop: 10,
         flexDirection: 'column'
     },
+
     containerSobre3:{       
         flex: 1,       
     },

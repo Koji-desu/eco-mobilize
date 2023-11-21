@@ -4,12 +4,12 @@ import Welcome from "./pages/Welcome";
 import Signin from "./pages/Signin";
 import Home from "./pages/Home";
 import ConfirmAluguel from "./pages/ConfirmAluguel";
-import carBYDTan from "./pages/Carros/BYDTan";
-import carNissanLeaf from "./pages/Carros/NissanLeaf";
-import carMiniCooper from "./pages/Carros/MiniCooper";
-import carJumpy from "./pages/Carros/Jumpy";
-import carExpert from "./pages/Carros/Expert";
-import carKangoo from "./pages/Carros/Kangoo";
+import CarBYDTan from "./pages/Carros/BYDTan";
+import CarNissanLeaf from "./pages/Carros/NissanLeaf";
+import CarMiniCooper from "./pages/Carros/MiniCooper";
+import CarJumpy from "./pages/Carros/Jumpy";
+import CarExpert from "./pages/Carros/Expert";
+import CarKangoo from "./pages/Carros/Kangoo";
 
 const Stack = createNativeStackNavigator()
 
@@ -42,37 +42,37 @@ export default function Router(){
 
            <Stack.Screen
             name="carBYDTan"
-            component={carBYDTan}
+            component={CarBYDTan}
             options={{headerShown: false}}
            />
 
             <Stack.Screen
             name="carNissanLeaf"
-            component={carNissanLeaf}
+            component={CarNissanLeaf}
             options={{headerShown: false}}
            />
 
            <Stack.Screen
             name="carMiniCooper"
-            component={carMiniCooper}
+            component={CarMiniCooper}
             options={{headerShown: false}}
            />
 
            <Stack.Screen
             name="carJumpy"
-            component={carJumpy}
+            component={CarJumpy}
             options={{headerShown: false}}
            />
 
            <Stack.Screen
             name="carExpert"
-            component={carExpert}
+            component={CarExpert}
             options={{headerShown: false}}
            />
 
            <Stack.Screen
             name="carKangoo"
-            component={carKangoo}
+            component={CarKangoo}
             options={{headerShown: false}}
            />
         </Stack.Navigator>

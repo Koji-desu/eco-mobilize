@@ -4,7 +4,7 @@ import { TextInput } from 'react-native-web';
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native';
 
-export default function carKangoo(){
+export default function CarKangoo(){
     const navigation = useNavigation();
     return(
         <View style={styles.container}>
@@ -14,20 +14,23 @@ export default function carKangoo(){
                 <Animatable.Image 
                     animation="flipInY"
                     source={require('../../../../assets/carrologo.png')}
-                    style={{width: '80px', height: '80px'}}
+                    style={{width: 80, height: 80}}
                     resizeMode="contain"
                 />
                 <Text style={styles.title}>EcoMobilize</Text>
             </View>
         
         <Animatable.View animation="fadeInUp" delay={500} style={styles.containerOptions} >
-            <TouchableOpacity>
+
             <Image  style={styles.imageCarro}
-                    source={require('../../../../assets/BYDTan.png')}
-                    resizeMode="contain"                         
+                    source={require('../../../../assets/Kangoo.png')}
+                    resizeMode="contain"            
+                    
+                
             />
-            <Text style={styles.text}>BYD Tan</Text>
-            </TouchableOpacity>             
+
+            <Text style={styles.text}>Kangoo</Text>
+                     
             <View style={styles.containerSobre1}>
                 <View style={styles.containerSobre3}>
 
@@ -41,13 +44,13 @@ export default function carKangoo(){
 
                 <View>
                 <Text style ={styles.informações}>
-                    * Câmbio Automático
+                    * Câmbio Manual
                 </Text>
                 <Text style ={styles.informações}>
                     * Multimídia
                 </Text>
                 <Text style ={styles.informações}>
-                    * Direção Elétrica
+                    * Direção Hidraulica
                 </Text>
                 </View>
 
@@ -57,7 +60,7 @@ export default function carKangoo(){
                     * Seguro
                 </Text>
                 <Text style ={styles.informações}>
-                    * Insufilm
+                    * 7 Lugares
                 </Text>
                 <Text style ={styles.informações}>
                     * Ar-Condicionado
@@ -67,8 +70,8 @@ export default function carKangoo(){
              </View>
             <View style={styles.containerSobre2}>
                 <Text style ={styles.textporapenas}>
-                    Por Apenas: R$ 3.699,99
-                <TouchableOpacity style = {styles.button}>
+                    Por Apenas: R$ 2.499,99
+                <TouchableOpacity /* onPress() */ style = {styles.button}>
                 <Text style ={styles.textbutton}>
                     Quero Alugar !
                 </Text>
@@ -81,13 +84,13 @@ export default function carKangoo(){
 
                  
         </Animatable.View>
-        <View style={styles.containerNavigatorMenu}>
-                <TouchableOpacity>
+        <Animatable.View animation="fadeInUp" delay={100} style={styles.containerNavigatorMenu}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Home')}}>
                     <Image
                         source={require('../../../../assets/voltar.png')}
                         style={styles.buttonsMenu}
                         resizeMode="contain"
-
+                        
                     />
                     <Text style={styles.buttonTextMenu}>Voltar</Text>
                 </TouchableOpacity>
@@ -97,7 +100,7 @@ export default function carKangoo(){
                         source={require('../../../../assets/abastecer.png')}
                         style={styles.buttonsMenu}
                         resizeMode="contain"
-
+                    
                     />
                     <Text style={styles.buttonTextMenu}>Onde Carregar</Text>
                 </TouchableOpacity>
@@ -107,7 +110,7 @@ export default function carKangoo(){
                         source={require('../../../../assets/localizacao.png')}
                         style={styles.buttonsMenu}
                         resizeMode="contain" 
-
+                    
                     />
                     <Text style={styles.buttonTextMenu}>Lojas</Text>
                 </TouchableOpacity>
@@ -120,7 +123,7 @@ export default function carKangoo(){
                     />
                     <Text style={styles.buttonTextMenu}>Perfil</Text>
                 </TouchableOpacity>
-            </View> 
+            </Animatable.View>
         </View>
     )
 }
@@ -133,14 +136,14 @@ const styles = StyleSheet.create({
     },
     containerLogo:{
         flex: 2,
-        backgroundColor: '#7DC6AA',
+        backgroundColor: '#4B7766',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row'
     },
     containerOptions:{
         flex:10,
-        backgroundColor: '#7DC6AA',
+        backgroundColor: '#4B7766',
         paddingStart: '5%',
         paddingEnd: '5%',
         textAlign: 'center',
@@ -154,15 +157,17 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 150,
         marginTop: 10,
-        borderColor:'#4B7766',
+        borderColor:'#95D6A4',
     },
     containerSobre2:{       
-        borderColor:'#4B7766',
+        borderColor:'#95D6A4',
         borderWidth:1,
         width: '100%',
         height: 200,
         marginTop: 10,
+        flexDirection: 'column'
     },
+
     containerSobre3:{       
         flex: 1,       
     },
@@ -206,6 +211,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         textAlign: 'center',
         alignItems: 'center',
+        marginTop: 15
     },
     textbutton:{
         fontSize: 40,
@@ -236,12 +242,14 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     containerNavigatorMenu:{
-        flex:1,
+        height: 100,
         backgroundColor: '#95D6A4',
         justifyContent: 'space-around',
         alignSelf: 'center',
         alignItems: 'center',
         flexDirection: 'row',
         width: '100%',
+        
+
     },
 })

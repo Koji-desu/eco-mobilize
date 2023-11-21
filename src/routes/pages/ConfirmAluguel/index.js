@@ -3,9 +3,12 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-web';
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native';
+import moment from 'moment/moment';
 
 export default function ConfirmAluguel(){
     const navigation = useNavigation();
+    let momentNow = moment().format('DDMMyyyyHHmmss')
+    console.log(momentNow)
     return(
         <View style={styles.container}>
             
@@ -35,7 +38,7 @@ export default function ConfirmAluguel(){
 
                 <View style={styles.containerCode}>
                     <Text style={styles.textCode}>Esse é seu código para retirada do veículo</Text>
-                    <Text style={{fontSize: 22, marginBottom: 10, marginTop: 10, color: '#FFF'}}>#2981791230</Text>
+                    <Text style={{fontSize: 22, marginBottom: 10, marginTop: 10, color: '#FFF'}} >#{momentNow}</Text>
                     <Text style={styles.textCode}>Também pode ser visto na parte do perfil</Text>
                 </View>
             </View>
@@ -121,7 +124,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     containerNavigatorMenu:{
-        flex:2,
+        height: 100,
         backgroundColor: '#95D6A4',
         justifyContent: 'space-around',
         alignSelf: 'center',
